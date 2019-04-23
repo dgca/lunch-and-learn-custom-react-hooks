@@ -1,0 +1,45 @@
+@import '../../styles/main.scss';
+@import '../../styles/variables.scss';
+
+$flair-height: 15px;
+
+.wrapper {
+  background-color: $gray;
+  display: flex;
+  height: 100vh;
+  padding-bottom: $flair-height * 2;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: $flair-height;
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+
+  &::before {
+    background-color: $salmon;
+    bottom: $flair-height;
+  }
+
+  &::after {
+    background-color: $blue-dark;
+    bottom: 0;
+  }
+}
+
+.navigation {
+  bottom: 0;
+  cursor: pointer;
+  display: flex;
+  font-size: 80px;
+  left: 0;
+  padding: 20px;
+  position: absolute;
+
+  [data-disabled='true'] {
+    opacity: 0.5;
+  }
+}

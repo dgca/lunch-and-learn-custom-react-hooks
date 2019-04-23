@@ -1,0 +1,34 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 50%;
+}
+
+.content:first-child:last-child {
+  width: 100%;
+}
+
+.content--centered {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.content__title {
+  margin-bottom: 2em;
+}
+
+.content__children {
+
+}
+
+.content__iframe {
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
