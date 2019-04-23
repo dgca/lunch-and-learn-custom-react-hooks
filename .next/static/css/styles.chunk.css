@@ -102,6 +102,7 @@ hr {
     bottom: 0; }
 
 .navigation {
+  align-items: center;
   bottom: 0;
   cursor: pointer;
   display: flex;
@@ -111,6 +112,9 @@ hr {
   position: absolute; }
   .navigation [data-disabled='true'] {
     opacity: 0.5; }
+
+.current-page {
+  font-size: 24px; }
 
 .content {
   display: flex;

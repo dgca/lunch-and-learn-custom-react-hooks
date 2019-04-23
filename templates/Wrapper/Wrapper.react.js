@@ -20,7 +20,14 @@ const routes = [
   '/10-an-incrementing-counter',
   '/11-co',
   '/12-augmenting-classes',
-  '/13-linked-list'
+  '/13-linked-list',
+  '/14-adding-iterability',
+  '/15-an-interesting-side-effect',
+  '/16-adding-hofs-to-our-class',
+  '/17-async-intro',
+  '/18-basic-async-generator',
+  '/19-fetching-multiple-pages',
+  '/20-fin'
 ];
 
 const Navigation = withRouter((props) => {
@@ -42,6 +49,10 @@ const Navigation = withRouter((props) => {
           👈
         </span>
       </PrevComponent>
+      &nbsp;
+      <span className="current-page">
+        {/\/(\d+)/.exec(props.router.pathname) && /\/(\d+)/.exec(props.router.pathname)[1]}
+      </span>
       &nbsp;
       <NextComponent
         href={nextRoute}
