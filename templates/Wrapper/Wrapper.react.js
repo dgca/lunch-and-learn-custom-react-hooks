@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Head from 'next/head';
+import Router from 'next/router';
 import { withRouter } from 'next/router';
 import '../../styles/main.scss';
 import './wrapper.scss';
@@ -30,43 +31,81 @@ const routes = [
   '/20-fin'
 ];
 
-const Navigation = withRouter((props) => {
-  const routeIndex = routes.indexOf(props.router.pathname);
-  const prevRoute = routes[routeIndex - 1];
-  const PrevComponent = prevRoute ? Link : 'div';
-  const nextRoute = routes[routeIndex + 1];
-  const NextComponent = nextRoute ? Link : 'div';
-  return (
-    <div className="navigation">
-      <PrevComponent
-        href={prevRoute}
-      >
-        <span
-          role="img"
-          aria-label="previous slide"
-          data-disabled={!prevRoute}
+const Navigation = withRouter(class extends React.Component {
+
+  componentDidMount() {
+    global.document.addEventListener('keyup', this.handleKeyNavigation);
+  }
+
+  componentWillUnmount() {
+    global.document.removeEventListener('keyup', this.handleKeyNavigation);
+  }
+
+  handleKeyNavigation = (e) => {
+    if (e.key === 'ArrowLeft') {
+      this.navigateToRoute(this.getPrevRoute());
+    } else if (e.key === 'ArrowRight') {
+      this.navigateToRoute(this.getNextRoute());
+    }
+  };
+
+  navigateToRoute(route) {
+    if (!route) {
+      return;
+    }
+    Router.push(route);
+  }
+
+  getPrevRoute() {
+    const routeIndex = routes.indexOf(this.props.router.pathname);
+    return routes[routeIndex - 1];
+  }
+
+  getNextRoute() {
+    const routeIndex = routes.indexOf(this.props.router.pathname);
+    return routes[routeIndex + 1];
+  }
+
+  render() {
+    const {router} = this.props;
+    const prevRoute = this.getPrevRoute();
+    const nextRoute = this.getNextRoute();
+    const PrevComponent = prevRoute ? Link : 'div';
+    const NextComponent = nextRoute ? Link : 'div';
+    return (
+      <div className="navigation">
+        <PrevComponent
+          href={prevRoute}
+          ref={this.prevRef}
         >
-          👈
+          <span
+            role="img"
+            aria-label="previous slide"
+            data-disabled={!prevRoute}
+          >
+            👈
+          </span>
+        </PrevComponent>
+        &nbsp;
+        <span className="current-page">
+          {/\/(\d+)/.exec(router.pathname) && /\/(\d+)/.exec(router.pathname)[1]}
         </span>
-      </PrevComponent>
-      &nbsp;
-      <span className="current-page">
-        {/\/(\d+)/.exec(props.router.pathname) && /\/(\d+)/.exec(props.router.pathname)[1]}
-      </span>
-      &nbsp;
-      <NextComponent
-        href={nextRoute}
-      >
-        <span
-          role="img"
-          aria-label="next-slide"
-          data-disabled={!nextRoute}
+        &nbsp;
+        <NextComponent
+          href={nextRoute}
+          ref={this.nextRef}
         >
-          👉
-        </span>
-      </NextComponent>
-    </div>
-  );
+          <span
+            role="img"
+            aria-label="next-slide"
+            data-disabled={!nextRoute}
+          >
+            👉
+          </span>
+        </NextComponent>
+      </div>
+    );
+  }
 });
 
 function Wrapper({

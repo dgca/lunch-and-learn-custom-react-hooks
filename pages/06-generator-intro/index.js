@@ -8,7 +8,7 @@ function Slide() {
       <Content
         title={(
           <h2>
-            So what the heck are generator functions?
+            So what are generator functions?
           </h2>
         )}
       />

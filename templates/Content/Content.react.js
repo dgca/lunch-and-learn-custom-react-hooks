@@ -28,6 +28,9 @@ function Content({
           src={iframe}
           title="CodePen"
           className="content__iframe"
+          onLoad={(e) => {
+            e.target.blur();
+          }}
         />
       )}
     </div>
