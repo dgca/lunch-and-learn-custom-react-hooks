@@ -7,20 +7,6 @@ import { withRouter } from 'next/router';
 import '../../styles/main.scss';
 import './wrapper.scss';
 
-// * useState - https://codepen.io/dgca/pen/YzKVKqQ?editors=0011
-// * useEffect - https://codepen.io/dgca/pen/NWKjKrO?editors=0011
-// * useContext - https://codepen.io/dgca/pen/pozPzLz?editors=0011
-// * useReducer - https://codepen.io/dgca/pen/bGbWbxJ?editors=0011
-// * useMemo - https://codepen.io/dgca/pen/wvwdwRZ?editors=0011
-// * useCallback - https://codepen.io/dgca/pen/vYBmYmb?editors=0011
-// * useRef - https://codepen.io/dgca/pen/yLBbyLp?editors=0011
-// * useImperativeHandle - https://codepen.io/dgca/pen/pozPvJp?editors=0011
-// * useLayoutEffect - https://codepen.io/dgca/pen/ExYmaEz?editors=0011
-// * useDebugValue
-// * useToggle - https://codepen.io/dgca/pen/qBWmEME
-// * useNodeSize - https://codepen.io/dgca/pen/GRKmgYm
-// * useAwaitPromise - https://codepen.io/dgca/pen/NWKjPJM
-
 const routes = [
   '/',
   '/01-about',
