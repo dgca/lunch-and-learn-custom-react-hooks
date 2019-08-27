@@ -2,7 +2,14 @@
   display: flex;
   flex-direction: column;
   padding: 30px;
-  width: 50%;
+}
+
+.content:first-child {
+  width: 35%;
+}
+
+.content:last-child {
+  width: 65%;
 }
 
 .content:first-child:last-child {

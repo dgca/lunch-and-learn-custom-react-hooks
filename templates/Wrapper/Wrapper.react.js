@@ -7,28 +7,41 @@ import { withRouter } from 'next/router';
 import '../../styles/main.scss';
 import './wrapper.scss';
 
+// * useState - https://codepen.io/dgca/pen/YzKVKqQ?editors=0011
+// * useEffect - https://codepen.io/dgca/pen/NWKjKrO?editors=0011
+// * useContext - https://codepen.io/dgca/pen/pozPzLz?editors=0011
+// * useReducer - https://codepen.io/dgca/pen/bGbWbxJ?editors=0011
+// * useMemo - https://codepen.io/dgca/pen/wvwdwRZ?editors=0011
+// * useCallback - https://codepen.io/dgca/pen/vYBmYmb?editors=0011
+// * useRef - https://codepen.io/dgca/pen/yLBbyLp?editors=0011
+// * useImperativeHandle - https://codepen.io/dgca/pen/pozPvJp?editors=0011
+// * useLayoutEffect - https://codepen.io/dgca/pen/ExYmaEz?editors=0011
+// * useDebugValue
+// * useToggle - https://codepen.io/dgca/pen/qBWmEME
+// * useNodeSize - https://codepen.io/dgca/pen/GRKmgYm
+// * useAwaitPromise - https://codepen.io/dgca/pen/NWKjPJM
+
 const routes = [
   '/',
   '/01-about',
-  '/02-background',
-  '/03-iteration-protocols',
-  '/04-iterator',
-  '/05-iterable',
-  '/06-generator-intro',
-  '/07-generator-function',
-  '/08-generator-function-simpler',
-  '/09-segue-into-practicality',
-  '/10-an-incrementing-counter',
-  '/11-co',
-  '/12-augmenting-classes',
-  '/13-linked-list',
-  '/14-adding-iterability',
-  '/15-an-interesting-side-effect',
-  '/16-adding-hofs-to-our-class',
-  '/17-async-intro',
-  '/18-basic-async-generator',
-  '/19-fetching-multiple-pages',
-  '/20-fin'
+  '/02-what-are-hooks',
+  '/03-what-are-hooks-cont',
+  '/04-built-in-hooks',
+  '/05-use-state',
+  '/06-use-effect',
+  '/07-use-context',
+  '/08-use-reducer',
+  '/09-use-memo',
+  '/10-use-callback',
+  '/11-use-ref',
+  '/12-use-imperative-handle',
+  '/13-use-layout-effect',
+  '/14-use-debug-value',
+  '/15-custom-hooks',
+  '/16-custom-hook-use-toggle',
+  '/17-custom-hook-use-node-size',
+  '/18-custom-hook-use-await-promise',
+  '/19-fin'
 ];
 
 const Navigation = withRouter(class extends React.Component {

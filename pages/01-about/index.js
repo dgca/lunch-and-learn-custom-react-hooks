@@ -4,7 +4,6 @@ import Wrapper from '../../templates/Wrapper/Wrapper.react';
 import Content from '../../templates/Content/Content.react';
 
 const content = `
-  * Frontend lead at Albert ([we're hiring](https://careers.albert.io/) 🤙)
   * <span class='fab fa-github'></span> [@dgca](https://github.com/dgca)
   * <span class='fab fa-codepen'></span> [@dgca](https://codepen.io/dgca/)
   * <span class='fab fa-twitter'></span> [@dan\\_cortes\\_](https://twitter.com/dan_cortes_)

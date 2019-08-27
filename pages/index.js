@@ -9,9 +9,8 @@ function Home() {
         title={(
           <div>
             <h1 className="title">
-              Iterables and (async) generator functions
+              Intro to React Hooks and Custom Hooks
             </h1>
-            <p className="subtitle">A practical walkthrough</p>
             <p className="byline">By: Dan Cortes</p>
             <style jsx>
               {`
